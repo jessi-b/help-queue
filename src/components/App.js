@@ -1,17 +1,13 @@
 import React from "react";
 import Header from "./Header";
-import TicketList from "./TicketList";
+import TicketControl from "./TicketControl";
 
 function App(){
   return ( 
-    // JSX syntax; syntatic sugar
-    // <React.Fragment>
-    //   <ChildComponent />
-    // </React.Fragment>
     <React.Fragment>
       <Header />
-      <TicketList />
-  </React.Fragment>
+      <TicketControl />
+    </React.Fragment>
   );
 }
 
