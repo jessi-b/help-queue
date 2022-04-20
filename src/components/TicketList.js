@@ -1,7 +1,7 @@
 // single source of truth
 // parent to Ticket
 import React from 'react';
-import Ticket from './Ticket';
+import Ticket from './ReadTicket';
 import PropTypes from "prop-types";
 
 // const mainTicketList = [
@@ -28,17 +28,21 @@ function TicketList(props){
       <hr/>
       {/* {mainTicketList.map((ticket, index) => */}
       {props.ticketList.map((ticket, index) => // Loop through the list passed down from TicketControl.
-        <Ticket names={ticket.names}
-          location={ticket.location}
-          issue={ticket.issue}
-          key={index}/>
+        <Ticket
+        whenTicketClicked = { props.onTicketSelection }
+        names={ticket.names}
+        location={ticket.location}
+        issue={ticket.issue}
+        id={ticket.id}
+        key={ticket.id}/>
       )}
     </React.Fragment>
   );
 }
 
 TicketList.propTypes = {
-  ticketList: PropTypes.array
+  ticketList: PropTypes.array,
+  onTicketSelection: PropTypes.func
 };
 
 export default TicketList;
