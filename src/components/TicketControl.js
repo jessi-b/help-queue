@@ -29,7 +29,7 @@ class TicketControl extends React.Component {
       });
     } else {
       this.setState(prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage,
+        formVisibleOnPage: !prevState.formVisibleOnPage
       }));
     }
   }
@@ -40,9 +40,11 @@ class TicketControl extends React.Component {
       formVisibleOnPage: false 
     });
   }
-  handleChangingSelectedTicket = (id) => {
+  handleChangingSelectedTicket = (id) => { 
     const selectedTicket = this.state.mainTicketList.filter(ticket => ticket.id === id)[0];
-    this.setState({selectedTicket: selectedTicket});
+    this.setState({
+      selectedTicket: selectedTicket
+    });
   }
   handleDeletingTicket = (id) => {
     const newMainTicketList = this.state.mainTicketList.filter(ticket => ticket.id !== id);
@@ -53,17 +55,19 @@ class TicketControl extends React.Component {
   }
   handleUpdateClick = () => {
     console.log("handleUpdateClick reached!");
-    this.setState({updating: true});
+    this.setState({
+      updating: true
+    });
   }
   handleUpdatingTicketInList = (ticketToUpdate) => {
     const updatedMainTicketList = this.state.mainTicketList
       .filter(ticket => ticket.id !== this.state.selectedTicket.id)
       .concat(ticketToUpdate);
     this.setState({
-        mainTicketList: updatedMainTicketList,
-        updating: false,
-        selectedTicket: null
-      });
+      mainTicketList: updatedMainTicketList,
+      updating: false,
+      selectedTicket: null
+    });
   }
   
   // render method

@@ -13,7 +13,7 @@ function UpdateTicketForm(props){
   return (
     <React.Fragment>
       <ReusableForm 
-        formSubmissionHandler={handleUpdateTicketFormSubmission} /* new code */ 
+        formSubmissionHandler={handleUpdateTicketFormSubmission} 
         buttonText="Update Ticket" />
     </React.Fragment>
   );

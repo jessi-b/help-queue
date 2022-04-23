@@ -27,14 +27,15 @@ function TicketList(props){
     <React.Fragment>
       <hr/>
       {/* {mainTicketList.map((ticket, index) => */}
-      {props.ticketList.map((ticket, index) => // Loop through the list passed down from TicketControl.
+      {props.ticketList.map((ticket) => // maps list from TicketControl
         <Ticket
-        whenTicketClicked = { props.onTicketSelection }
-        names={ticket.names}
-        location={ticket.location}
-        issue={ticket.issue}
-        id={ticket.id}
-        key={ticket.id}/>
+          whenTicketClicked = {props.onTicketSelection}
+          names={ticket.names}
+          location={ticket.location}
+          issue={ticket.issue}
+          id={ticket.id}
+          key={ticket.id
+        }/>
       )}
     </React.Fragment>
   );
